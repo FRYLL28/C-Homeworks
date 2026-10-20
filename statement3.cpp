@@ -1,9 +1,9 @@
 #include <iostream>
-float calculate_scalar(float* array, int len){
-    float* start_of_array = array;
-    float* mid_of_array = start_of_array+len/2;
-    float result = 0;
-    for (float i = 0; i < len/2; i++){
+double calculate_scalar(double* array, int len){
+    double* start_of_array = array;
+    double* mid_of_array = start_of_array+len/2;
+    double result = 0;
+    for (int i = 0; i < len/2; i++){
         result = result+(*start_of_array)*(*mid_of_array);
         start_of_array++;
         mid_of_array++;
@@ -22,13 +22,14 @@ int main(int argc, char* argv[]){
         num = num*10+(*ptr - '0'); //сдвиг по аски
         ptr++;
     }
-    float* array = new float[num*2];
+    double* array = new double[num*2];
     for (int i = 0; i<num;i++){
         std::cin >> array[i];
     }
     for (int i = num; i<num*2;i++){
         std::cin >> array[i];
     }
-    float res = calculate_scalar(array,num*2);
+    double res = calculate_scalar(array,num*2);
     std::cout << res << "\n";
+    delete[] array;
 }
