@@ -3,7 +3,6 @@ int check_sign(const char*& ptr){
     if (*ptr == '-'){
         ptr = ptr+1;
         return -1;
-    
     }
     else {
         if (*ptr == '+'){
@@ -69,11 +68,10 @@ int compare_numbers(const char* ptr1, const char* ptr2){
     int len2 = integer_part(ptr2);
 
     if (len1 != len2){
-        if (len1 > len2) result = 1; //greater
-        result = -1; //less
+        if (len1 > len2)
+            result = 1; //greater
+        else result = -1; //less
     }
-
-    
 
     int integer_compare_res = compare_integer_part(start1,start2,len1); ///либо len1 либо len2 подставляем, так как на данном этапе len1 = len2
     if (integer_compare_res == 1) result = 1;

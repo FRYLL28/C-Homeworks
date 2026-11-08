@@ -1,9 +1,6 @@
 #include <iostream>
-#include <cmath>
-#include <cstdlib>
 void reverse_part_of_array(int* start,int* end){
-    int* true_start = start;
-    for (int i = 0; i<((end-start)/2 + 1);i++){      
+    while(start<end){      
         int temp = *start;
         *start = *end;
         *end = temp;
@@ -46,10 +43,11 @@ int main(int argc, char* argv[]){
         k = k%num;
     }
     else if (k < 0){
-        k = (k+num)%num;
+        k = ((k % num) + num) % num;
     }
     else{
         print_array(array,num);
+        delete[] array;
         return 0;
     }
     reverse_part_of_array(array,array+num-1);
