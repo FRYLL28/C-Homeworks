@@ -71,6 +71,7 @@ int compare_numbers(const char* ptr1, const char* ptr2){
         if (len1 > len2)
             result = 1; //greater
         else result = -1; //less
+        return result;
     }
 
     int integer_compare_res = compare_integer_part(start1,start2,len1); ///либо len1 либо len2 подставляем, так как на данном этапе len1 = len2
